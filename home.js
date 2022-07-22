@@ -79,12 +79,14 @@ console.log(canWeDeliver(666502))
 */
 
 function canWeDeliverTwo (zipCode){
-    for(let i= 0; i < deliveryAreaZipCodes.length; i++)
-    if(deliveryAreaZipCodes[i] === zipCode){
-        return "You're in our delivery zone!"
-     }else{
-        return "Sorry, we can't deliver to that address"
+    for(let i= 0; i < deliveryAreaZipCodes.length; i++){
+        if(deliveryAreaZipCodes[i] === zipCode){
+            return "You're in our delivery zone!"
+         }else{
+            return "Sorry, we can't deliver to that address"
+        }
     }
+    
 }
 let x = canWeDeliver(85204)
 console.log(x)

@@ -97,12 +97,47 @@ console.log(`${category}`)
 */
 
 const foodArr = [
-    {name: 'Veiggie'},
-    {price: 30},
-    {category: 'entree'},
-    {popularity: 4.0},
-    {rating: 5},
-    {tags:['Large', 'Onions', 'Pepper', 'Olives', 'Mushrooms']}
+    {
+    name: 'Veiggie',
+    price: 30,
+    category: 'entree',
+    popularity: 4.0,
+    rating: 5,
+    tags:['Large', 'Onions', 'Pepper', 'Olives', 'Mushrooms']
+    },
+    {
+        name: 'chicken Pizza',
+        price: 20,
+        category: 'Dinner',
+        popularity: 6.0,
+        rating: 3,
+        tags:['Large', 'chicken', 'Mushrooms']
+    },
+    {
+        name: 'cheese',
+        price: 15,
+        category: 'lunch',
+        popularity: 3.5,
+        rating: 5,
+        tags:['extra cheese']
+    },
+    {
+        name: 'breadSticks',
+        price: 10,
+        category: 'appitz.',
+        popularity: 8,
+        rating: 7,
+        tags:['garlic', 'stuffed' ]
+    },
+    {
+        name: 'pasta',
+        price: 25,
+        category: 'entree',
+        popularity: 9,
+        rating: 8,
+        tags:['alfredo', 'chiken', 'veggies']
+    }
+
 ]
 
 
@@ -119,19 +154,10 @@ const foodArr = [
     your food objects has.
 */
 
-function foodItems (food) {
-    for(let i= 0; i < foodArr.tag.length; i++)
-    if( foodArr.tag === 'Onions'){
-        return 'Onions'
-    }
- 
-}
-console.log(foodItems('onions'))
   
 
-const filteredFood = foodArr.filter(foodItems)
-
-
+ const food = foodArr.filter(obj=> obj.tags.includes('Onions'))
+ console.log(food);
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -173,7 +199,15 @@ const filteredFood = foodArr.filter(foodItems)
 */
 
 function filterByProperty(property, number, type){
-    let newArr = foodArr.filter
+    let newArr = foodArr.filter((foodArr)=>{
+        if (type === 'above'){
+            return number <= foodArr[property]
+        }else {
+            return number >= foodArr[property]
+        }
+
+    })
+    return newArr
 }
 
 
@@ -184,4 +218,5 @@ function filterByProperty(property, number, type){
     You'll have to console.log to see the filtered array
 */
 
-//CODE HERE
+const resutls = filterByProperty('price', 30, 'above')
+console.log(resutls);

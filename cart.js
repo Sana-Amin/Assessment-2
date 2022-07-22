@@ -32,12 +32,10 @@ const cart = [
         price: 7.99
     }
 ]
+let start = 0;
 
-function total ()
-
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
-
+const cartTotal = cart.reduce((a,c) => a + c.price, start)
+console.log(cartTotal)
 //////////////////PROBLEM 2////////////////////
 /*  
     Write a function called `calcFinalPrice` that
@@ -52,8 +50,14 @@ function total ()
     Note: the numbers passed in for `tax` will be
     decimals, for example: .06 for a 6% tax.
 */
+const couponValue = 6
+const tax = 0.05
+function calcFinalPrice(cartTotal, couponValue, tax){
+   endingPrice = ((cartTotal* tax) + cartTotal) - couponValue;
+   return(endingPrice)
+};
 
-//CODE HERE
+console.log(calcFinalPrice(cartTotal, couponValue, tax))
 
 
 
@@ -78,7 +82,12 @@ function total ()
 */
 
 /*
-    TEXT ANSWER HERE
+    The customer name (string)
+    The price of the order (number)
+    The food that was ordered (array of strings)
+    The order number (number)
+    How they will pay (string)
+
 
 */
 
@@ -87,4 +96,10 @@ function total ()
     guidelines.
 */
 
-//CODE HERE
+const Cart = {
+    name: "Sana",
+    price: 15,
+    food: ['pizza', 'coke'],
+    orderNumber: 39,
+    payment: 'card'
+};
